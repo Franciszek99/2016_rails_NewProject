@@ -1,0 +1,2 @@
+class Subiect < ApplicationRecord
+end
