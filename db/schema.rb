@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006053348) do
+ActiveRecord::Schema.define(version: 20161006063044) do
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email",      default: "", null: false
-    t.string   "password"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "email",           default: "", null: false
+    t.string   "username"
+    t.string   "hashed_password"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["username"], name: "index_admin_users_on_username", using: :btree
   end
 
 end
